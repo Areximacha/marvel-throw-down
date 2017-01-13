@@ -27614,13 +27614,9 @@
 	  displayName: 'Home',
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'header',
+	      'h1',
 	      null,
-	      _react2.default.createElement(
-	        'nav',
-	        null,
-	        'Home'
-	      )
+	      'Home'
 	    );
 	  }
 	});

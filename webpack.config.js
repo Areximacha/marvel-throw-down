@@ -15,6 +15,13 @@ module.exports = {
     filename: '/_includes/js/index_bundle.js'
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js?$/,
+        loader: 'standard',
+        exclude: /(node_modules|bower_components)/
+      }
+    ],
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
       {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']}

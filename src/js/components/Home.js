@@ -3,11 +3,7 @@ import React from 'react'
 export default React.createClass({
   render () {
     return (
-      <header>
-        <nav>
-          Home
-        </nav>
-      </header>
+      <h1>Home</h1>
     )
   }
 })
