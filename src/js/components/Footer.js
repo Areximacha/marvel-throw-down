@@ -3,8 +3,7 @@ import React from 'react'
 export default React.createClass({
   render () {
     return (
-      <div className='home'>
-      </div>
+      <footer>footer</footer>
     )
   }
 })

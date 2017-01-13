@@ -24,7 +24,15 @@ module.exports = {
     ],
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-      {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']}
+      {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
+      {
+        test: /\.(jpe?g|png|gif|svg|ttf)$/i,
+        loader: 'file-loader',
+        query: {
+          name: '_includes/[path][name].[ext]',
+          context: './src'
+        }
+      }
     ]
   },
   sassLoader: {
