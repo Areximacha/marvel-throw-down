@@ -19,7 +19,7 @@ module.exports = {
       {
         test: /\.js?$/,
         loader: 'standard',
-        exclude: /(node_modules|bower_components)/
+        exclude: /(node_modules|bower_components|www)/
       }
     ],
     loaders: [
