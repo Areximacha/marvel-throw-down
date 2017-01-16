@@ -24,17 +24,18 @@ export default {
     return requestTotal()
       .then(response => {
         let total = response.data.data.total
-        
         return axios.all([
           requestCharacter(generateOffset(1, total)),
           requestCharacter(generateOffset(1, total))
         ])
       })
       .then(response => {
-        console.log(response)
+        return response.map(character => {
+          return character.data.data.results[0]
+        })
       })
       .catch(error => {
         return error
       })
-  },
+  }
 }

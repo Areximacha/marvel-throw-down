@@ -2,10 +2,19 @@ import React from 'react'
 import api from '../utils/api'
 
 export default React.createClass({
+  getInitialState () {
+    return {
+      loading: true,
+      characters: []
+    }
+  },
   componentDidMount () {
     api.getCharacter()
       .then(response => {
-        console.log(response)
+        this.setState({
+          loading: false,
+          characters: response
+        })
       })
       .catch(error => {
         console.error(error)
