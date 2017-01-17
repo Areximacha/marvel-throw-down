@@ -27,11 +27,29 @@ export default React.createClass({
   },
   outputArray (characters) {
     return characters.map((character, index) => {
+      console.log(character)
       let name = character.name
       let description = character.description
-      let img = `${character.thumbnail.path}.${character.thumbnail.extension}`
+      let img = ''
+      if (!character.thumbnail.path.includes('image_not_available')) {
+        img = `${character.thumbnail.path}.${character.thumbnail.extension}`
+      }
+      let more = ''
+      for (let i = 0; character.urls.length > i; i++) {
+        if (character.urls[i].type === 'wiki') {
+          more = character.urls[i].url
+        }
+      }
+      if (more === '') {
+        more = character.urls[0].url
+      }
       return (
-        <CharacterSheets name={name} description={description} image={img} key={index} />
+        <CharacterSheets
+          name={name}
+          description={description}
+          image={img}
+          more={more}
+          key={index} />
       )
     })
   },
