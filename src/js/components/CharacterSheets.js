@@ -10,7 +10,7 @@ const RenderThumbnail = props => {
 
 const CharacterSheets = props => {
   return (
-    <div>
+    <div className={`side-${props.index}`}>
       <RenderThumbnail url={props.image} />
       <h2>{props.name}</h2>
       {props.description && <p>{props.description}</p>}
@@ -23,7 +23,8 @@ CharacterSheets.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string,
   image: PropTypes.string,
-  more: PropTypes.string.isRequired
+  more: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired
 }
 
 export default CharacterSheets
