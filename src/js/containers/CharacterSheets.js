@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import api from '../utils/api'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import CharacterSheets from '../components/CharacterSheets'
 
@@ -27,7 +28,6 @@ export default React.createClass({
   },
   outputArray (characters) {
     return characters.map((character, index) => {
-      console.log(index)
       let name = character.name
       let description = character.description
       let img = ''
@@ -44,19 +44,29 @@ export default React.createClass({
         more = character.urls[0].url
       }
       return (
-        <CharacterSheets
-          name={name}
-          description={description}
-          image={img}
-          more={more}
-          index={index}
-          key={index} />
+        <ReactCSSTransitionGroup
+          transitionName={`slam-close-${index}`}
+          transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnter={true}
+          transitionEnterTimeout={500}>
+          <CharacterSheets
+            name={name}
+            description={description}
+            image={img}
+            more={more}
+            index={index}
+            key={index} />
+        </ReactCSSTransitionGroup>
       )
     })
   },
   render () {
+    if (this.state.loading) {
+      return <h2>Loading...</h2>
+    }
     return (
-      <div>
+      <div className='player-select'>
         {this.outputArray(this.state.characters)}
       </div>
     )

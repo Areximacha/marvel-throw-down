@@ -10,7 +10,7 @@ const RenderThumbnail = props => {
 
 const CharacterSheets = props => {
   return (
-    <div className={`side-${props.index}`}>
+    <div className={`character-sheet side-${props.index}`}>
       <RenderThumbnail url={props.image} />
       <h2>{props.name}</h2>
       {props.description && <p>{props.description}</p>}

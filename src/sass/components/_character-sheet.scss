@@ -1,0 +1,55 @@
+/*********************
+
+Authors:
+	Jay Tang
+
+Stylesheet:
+	Character Sheet component stylesheet
+
+*********************/
+
+.character-sheet {
+	position: absolute;
+	top: 0;
+	display: inline-block;
+	padding: 50px 0;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&.side-0 {
+		left: 0;
+		background-image: url('../img/backgrounds/civilwar-bg-left.jpg');
+		background-position: right;
+	}
+
+	&.side-1 {
+		right: 0;
+		background-image: url('../img/backgrounds/civilwar-bg-right.jpg');
+		background-position: left;
+	}
+}
+
+.slam-close-0-enter,
+.slam-close-0-appear {
+	@include translate(-100%, 0);
+	@include transition(all 0.5s ease-in);
+
+	&.slam-close-0-enter-active,
+	&.slam-close-0-appear-active {
+		@include translate(0, 0);
+	}
+}
+
+.slam-close-1-enter,
+.slam-close-1-appear {
+	@include translate(100%, 0);
+	@include transition(all 0.5s ease-in);
+
+	&.slam-close-1-enter-active,
+	&.slam-close-1-appear-active {
+		@include translate(0, 0);
+	}
+}
