@@ -47,9 +47,12 @@ export default React.createClass({
         <ReactCSSTransitionGroup
           transitionName={`slam-close-${index}`}
           transitionAppear={true}
-          transitionAppearTimeout={500}
+          transitionAppearTimeout={700}
           transitionEnter={true}
-          transitionEnterTimeout={500}>
+          transitionEnterTimeout={700}
+          transitionLeave={false}
+          component='div'
+          key={index+10}>
           <CharacterSheets
             name={name}
             description={description}

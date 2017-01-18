@@ -10,11 +10,17 @@ const RenderThumbnail = props => {
 
 const CharacterSheets = props => {
   return (
-    <div className={`character-sheet side-${props.index}`}>
-      <RenderThumbnail url={props.image} />
-      <h2>{props.name}</h2>
-      {props.description && <p>{props.description}</p>}
-      <a href={props.more} target='_blank'>Find out more</a>
+    <div className={`character-sheet-wrapper side-${props.index}`}>
+      <div className='character-sheet'>
+        <div className='overlay'></div>
+        <div className='profile'>
+          <RenderThumbnail url={props.image} />
+          <h2>{props.name}</h2>
+          {props.description && <p>{props.description}</p>}
+          <a href={props.more} target='_blank'>Find out more</a>
+        </div>
+      </div>
+      <div className='vs-overlay'></div>
     </div>
   )
 }
