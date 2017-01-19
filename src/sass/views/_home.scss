@@ -21,6 +21,9 @@ Stylesheet:
 .hero-content {
 	color: $colour-copy-neg;
 	text-align: center;
+	background-color: $colour-opacity-alpha;
+	padding: 50px;
+	@include border-radius(5px);
 
 	h2 {
 		color: $colour-copy-neg;

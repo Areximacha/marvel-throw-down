@@ -3,6 +3,7 @@ import api from '../utils/api'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import CharacterSheets from '../components/CharacterSheets'
+import Loading from '../components/Loading'
 
 export default React.createClass({
   PropTypes: {
@@ -66,7 +67,7 @@ export default React.createClass({
   },
   render () {
     if (this.state.loading) {
-      return <h2>Loading...</h2>
+      return <Loading />
     }
     return (
       <div className='player-select'>
