@@ -31,11 +31,15 @@ Stylesheet:
 // }
 
 @font-face {
-	font-family: 'beon';
-	src:url("/_includes/fonts/beon-webfont.eot");
-	src:url("/_includes/fonts/beon-webfont.woff") format("woff"),
-		url("/_includes/fonts/beon-webfont.ttf")  format('truetype'),
-		url("/_includes/fonts/beon-webfont.svg#beon-webfont") format('svg');
+	font-family: 'pressStart';
+	src:url("../fonts/prstartk.ttf")  format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'abuket';
+	src:url("../fonts/abuket.ttf")  format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }

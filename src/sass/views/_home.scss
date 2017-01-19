@@ -25,7 +25,26 @@ Stylesheet:
 	padding: 50px;
 	@include border-radius(5px);
 
+	i {
+		background-image: url('../img/icons/marvel-logo.png');
+		background-size: contain;
+		height: 142px;
+		width: 200px;
+	}
+
 	h2 {
 		color: $colour-copy-neg;
+		font-family: $font-abuket;
+		margin-bottom: 40px;
+	}
+
+	p {
+		padding: 0;
+	}
+
+	a {
+		font-family: $font-press-start;
+		display: inline-block;
+		margin-top: 40px;
 	}
 }
