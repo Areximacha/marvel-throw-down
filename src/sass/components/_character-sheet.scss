@@ -56,17 +56,12 @@ Stylesheet:
 	position: absolute;
 	top: 0;
 	display: inline-block;
-	padding: 50px;
 	width: 50%;
 	height: 100%;
 	text-align: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	color: $colour-copy-neg;
-
-	h2 {
-		color: $colour-copy-neg;
-	}
 
 	.overlay {
 		position: absolute;
@@ -78,12 +73,40 @@ Stylesheet:
 		opacity: 0.7;
 	}
 
-	.profile {
-		position: absolute;
-		width: 600px;
-		top: 100;
-		left: 50%;
-		margin-left: -300px;
+}
+
+.profile {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 100px 150px;
+	z-index: 2;
+
+	.img-wrapper {
+		display: inline-block;
+		padding: 10px;
+		background-color: $colour-background-delta;
+		opacity: 0.7;
+		margin-bottom: 20px;
+		@include border-radius(5px);
+	}
+
+	h2, p {
+		margin-bottom: 20px;
+	}
+
+	h2 {
+		color: $colour-copy-neg;
+	}
+
+	a {
+		text-decoration: underline;
+		opacity: 0.6;
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 

@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react'
 
+import placeholder from '../../img/icons/profile-placeholder.png'
+
 const RenderThumbnail = props => {
   if (props.url === '') {
-    return <p>No image</p>
+    return <img src={placeholder} />
   }
 
   return <img src={props.url} />
@@ -12,15 +14,17 @@ const CharacterSheets = props => {
   return (
     <div className={`character-sheet-wrapper side-${props.index}`}>
       <div className='character-sheet'>
-        <div className='overlay'></div>
+        <div className='overlay' />
         <div className='profile'>
-          <RenderThumbnail url={props.image} />
+          <div className='img-wrapper'>
+            <RenderThumbnail url={props.image} />
+          </div>
           <h2>{props.name}</h2>
           {props.description && <p>{props.description}</p>}
-          <a href={props.more} target='_blank'>Find out more</a>
+          <a href={props.more} target='_blank'>Find out more ></a>
         </div>
       </div>
-      <div className='vs-overlay'></div>
+      <div className='vs-overlay' />
     </div>
   )
 }
